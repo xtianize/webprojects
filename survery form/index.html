@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="title">Survey Form</h1>
+        <p id="description">Completing this form will help us improve the platform</p>
+    </header>
+    <main>
+        <form action="submit.php" id="survey-form">
+            <fieldset>
+                <label for="name" id="name-label">Name <input type="text" name="name" id="name" placeholder="enter your name here" required/></label>
+                <label for="email" id="email-label">Email <input type="email" name="email" id="email" placeholder="enter a valid email address" required/></label>
+                <label for="number" id="number-label">Age <input type="number" name="number" id="number" min="13" max="120" placeholder="must be 13 or above" required/></label>
+                <label for="dropdown"> Which role decribes your current career? <select name="dropdown" id="dropdown">
+                    <option value="">Please select one</option>
+                    <option value="student">Student</option>
+                    <option value="part-time">Part-time Job</option>
+                    <option value="full-time">Full-time Job</option>
+                    <option value="other">Other</option>
+                </select></label>                
+            </fieldset>            
+            <fieldset>
+                <legend>Would you recommend us to a friend?</legend>
+                <label for="recommendation">
+                    <label for="yes"><input type="radio" name="recommendation" id="yes" class="inline" value="yes" checked/> Absolutely</label>
+                    <label for="neutral"><input type="radio" name="recommendation" id="neutral" class="inline" value="neutral"/> Maybe</label>
+                    <label for="no"><input type="radio" name="recommendation" id="no" class="inline" value="no"/> Not sure</label>
+                </label>
+                <label for="feature"> Which of the following features do you like the most? <select name="feature" id="feature">
+                    <option value="">Please select one</option>
+                    <option value="exercises">Exercises</option>
+                    <option value="projects">Projects</option>
+                    <option value="forums">Forums</option>
+                    <option value="other">Other</option>
+                </select></label>                
+            </fieldset>
+            <fieldset>
+                <legend>Which of the following features do you think should be improved?</legend>
+                <label for="exercises"><input type="checkbox" name="improvement" id="exercises" value="exercises" class="inline">Exercises</label>
+                <label for="projects"><input type="checkbox" name="improvement" id="projects" value="projects" class="inline">Projects</label>
+                <label for="forums"><input type="checkbox" name="improvement" id="forums" value="forums" class="inline">Forums</label>
+                <label for="other"><input type="checkbox" name="improvement" id="other" value="other" class="inline">Other</label>
+
+                <label for="comment">Leave a comment: <textarea id="comment" name="bio" rows="4" cols="30" placeholder="Write your comments/suggestions here..."></textarea></label>
+            </fieldset>
+                <input type="submit" id="submit">
+        </form>
+    </main>  
+</body>
+</html>

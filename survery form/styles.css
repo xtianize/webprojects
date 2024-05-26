@@ -1,0 +1,66 @@
+label {
+    display: block;
+    margin: .5rem 0;
+}
+input,
+textarea,
+select {
+  margin: 1rem 0 0 0;
+  width: 100%;
+  min-height: 2em;
+  border: none;
+  border-radius: 5px;
+}
+.inline {
+    display: inline;
+    width: unset;
+    margin: 0 0.5em 0 0;  
+    vertical-align: middle;  
+}
+body {
+    width: 100%;
+    height: 116vh;
+    margin: 0;
+    color: azure;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    background: fixed url(https://wallpapers.com/images/file/information-1920-x-1080-background-urg3hs9gtqfrmqzc.jpg);
+    box-shadow: inset 0 0 0 100vh rgba(39, 79, 180, 0.3);   
+}
+
+
+h1,p{
+    text-align: center;
+    margin: 0 auto 1rem;
+}
+h1 {
+    padding-top: .25rem;
+}
+
+form{
+    background-color:rgba(39, 79, 92, 0.911);
+    width: 80vw;
+    margin: 0 auto;
+    padding: 0 2rem;
+    max-width: 500px;
+    min-width: 300px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+}
+fieldset{
+    border: none;
+    padding: 1rem 0 1em;
+}
+fieldset:last-of-type{
+    padding-bottom: 0;
+}
+
+input[type=submit] {
+    height: 2rem;
+    display: block;
+    width: 75%;
+    margin: 1em auto 0;
+    background-color: rgb(53, 175, 135);
+    border: 0;
+    color:white;
+}

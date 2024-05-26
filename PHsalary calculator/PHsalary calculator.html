@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PH salary calculator</title>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <style>
+      h1 {
+        text-align: center;
+      }
+      label {
+        display: block;
+        margin: 0.5rem 0;
+      }
+      body {
+        background-color: rgba(44, 15, 4, 0.534);
+        color: rgb(63, 35, 1);
+        width: 100;
+        height: 100vh;
+        margin: 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        
+      }
+      input {
+        width: 100%;
+        margin: 10px 0 0 0;
+        background-color:rgb(63, 35, 1);
+        border: solid 1.5px rgb(124, 106, 84);
+        color:rgb(207, 177, 141);
+        min-height: 2em;
+      }
+      form {
+        width: 60vw;
+        max-width: 500px;
+        min-width: 350px;
+        margin: 0 auto;
+      }
+      .inline {
+        width: unset;
+        margin: 0 .5em 0 0;
+        vertical-align: middle;
+      }
+      input[type="submit"] {
+        display: block;
+        width: 50%;
+        margin: .6rem auto ;
+        height: 1.5em;
+        font-size: 1.05rem;
+        background-color: rgb(124, 106, 84);
+        border: solid 1px beige;
+      }
+      fieldset {
+        border: 0;
+        border-bottom: 2px solid bisque;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Salary calculator</h1>
+    </header>
+    <main>
+      <section>
+        <div class="inputDiv">
+          <form action="submit_page.php" method="post" name="salaryCalc">
+            <label for="name"
+              >Complete name:
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="First Name, Last Name"
+                required
+            /></label>
+
+            <label for="position"
+              >Position:
+              <input
+                type="text"
+                id="position"
+                name="position"
+                placeholder="your job position"
+                required
+            /></label>
+            <label for="basicPay"
+              >Basic Rate:
+              <input
+                type="number"
+                id="basicPay"
+                name="basicPay"
+                max="31"
+                placeholder="your daily rate"
+            /></label>
+
+            <fieldset>
+              <legend>Pay Period:</legend>
+              <label for="payPeriod"></label>
+              <input type="date" id="payPeriod" name="payPeriod" class="inline" /><span class="inline"> to</span>
+              <input type="date" id="payPeriod" name="payPeriod" class="inline" />
+            </fieldset>
+
+            <fieldset>
+              <legend>Please select your the type of your wage period:</legend>
+              <label
+                ><input
+                  type="radio"
+                  id="wageDaily"
+                  name="wageType"
+                  value="daily"
+                  class="inline"
+                  checked />Daily</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  id="wageWeekly"
+                  name="wageType"
+                  value="weekly" 
+                  class="inline"/>Weekly</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  id="wageSemiMonth"
+                  name="wageType"
+                  value="semi-monthly" 
+                  class="inline"/>Semi-monthly</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  id="wageMonthly"
+                  name="wageType"
+                  value="monthly" 
+                  class="inline"/>Monthly</label
+              >
+            </fieldset>
+
+            
+
+            <fieldset>
+              <legend>
+                Enter number of days worked for regular days and holidays:
+              </legend>
+              <label for="daysWorkedReg"
+                >Regular day:
+                <input
+                  type="number"
+                  id="daysWorkedReg"
+                  name="daysWorkedReg"
+                  max="31"
+                  min="0"
+                  placeholder="days"
+              /></label>
+
+              <label for="daysWorkedSpecial"
+                >Special day on Working day:
+                <input
+                  type="number"
+                  id="daysWorkedSpecial"
+                  name="daysWorkedSpecial"
+                  max="31"
+                  min="0"
+                  placeholder="days" />
+              </label>
+
+              <label for="daysWorkedSpecialRest"
+                >Special day on Rest Day:
+                <input
+                  type="number"
+                  id="daysWorkedSpecialRest"
+                  name="daysWorkedSpecialRest"
+                  max="31"
+                  min="0"
+                  placeholder="days" />
+              </label>
+
+              <label for="daysWorkedHoliday"
+                >Regular Holiday:
+                <input
+                  type="number"
+                  id="daysWorkedHoliday"
+                  name="daysWorkedHoliday"
+                  max="31"
+                  min="0"
+                  placeholder="days"
+              /></label>
+
+              <label for="daysWorkedHolidayRest"
+                >Regular Holiday on Rest Day:
+                <input
+                  type="number"
+                  id="daysWorkedHolidayRest"
+                  name="daysWorkedHolidayRest"
+                  max="31"
+                  min="0"
+                  placeholder="days" />
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Total Mins of Overtime:</legend>
+              <label for="overTimeReg"
+                >Total Overtime for Regular Days:
+                <input
+                  type="number"
+                  id="overTimeReg"
+                  name="overTimeReg"
+                  min="0"
+                  max="180"
+                  placeholder="mins"
+              /></label>
+
+              <label for="overTimeSpecial"
+                >Total Overtime for Rest/Special Day:
+                <input
+                  type="number"
+                  id="overTimeSpecial"
+                  name="overTimeSpecial"
+                  min="0"
+                  max="180"
+                  placeholder="mins" />
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>
+                Please enter No. of Days worked at night time accordingly:
+              </legend>
+              <label for="nightShiftReg"
+                >No. of days worked during regular days:
+                <input
+                  type="number"
+                  id="nightShiftReg"
+                  name="nightShiftReg"
+                  max="31"
+                  min="0"
+                  ;
+                  placeholder="days" />
+              </label>
+
+              <label for="nightShiftSpecial"
+                >No. of days worked during rest/special days:
+                <input
+                  type="number"
+                  id="nightShiftSpecial"
+                  name="nightShiftSpecial"
+                  max="31"
+                  in="0"
+                  ;
+                  placeholder="days" />
+              </label>
+
+              <label for="nightShiftHoliday"
+                >No. of days worked during regular holidays:
+                <input
+                  type="number"
+                  id="nightShiftHoliday"
+                  name="nightShiftHoliday"
+                  max="31"
+                  in="0"
+                  ;
+                  placeholder="days" />
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <label for="allowance">Allowance(optional): <input
+                type="number"
+                id="allowance"
+                name="allowance"
+                placeholder="total per period" /></label>
+              
+            </fieldset>
+            
+
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      </section>
+      <hr />
+      <section>
+        <!-- this part display the values like a payslip -->
+        <div class="outputDiv">
+          <h3>Name:</h3>
+          <p class="employeeOutput">Employee Name</p>
+          <h3>Position:</h3>
+          <p class="positionOutput">Position</p>
+          <h3>Pay Period:</h3>
+          <p class="periodOutput">Pay Period</p>
+          <h3>Daily Rate:</h3>
+          <p class="rateOutput">Daily Rate</p>
+          <h3>Allowance:</h3>
+          <p class="allowanceOutput">Allowance</p>
+
+          <hr />
+          <h3>Basic Salary:</h3>
+          <p class="totalBasic">basic salary</p>
+          <h3>Regular Holiday pay:</h3>
+          <p class="totalReg">reg</p>
+          <h3>Special Holiday pay:</h3>
+          <p class="totalSpec">special</p>
+          <h3>Nightshift pay:</h3>
+          <p class="totalNight">nightshift</p>
+          <h3>Overtime pay:</h3>
+          <p class="totalOvertime">overtime</p>
+
+          <h2>Gross Pay:</h2>
+          <p class="totalGross">gross pay</p>
+
+          <hr />
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
