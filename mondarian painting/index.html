@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mondarian painting</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;            
+           
+        }
+        .painting {
+                  
+            height: 760px;
+            width: 760px;
+            display: grid;
+            grid-template: 100px 100px 100px 100px 100px 100px 100px / 100px 100px 100px 100px 100px 100px 100px ;
+            gap:10px;
+            border: 10px solid #000;
+            background-color: #000;  
+        }
+        div {
+            background-color: #f9f9f9;
+        }
+        .yellow {
+            background-color: #fac901;
+        }
+        .col2{
+            grid-column: span 2;
+        }
+        .row2 {
+            grid-row: span 2;
+        }
+        .red {
+            background-color: #dd0100;
+        }
+        .area2x2 {
+            grid-area: span 2/span 2;
+        }
+        .col3 {
+            grid-column: span 3;
+        }
+        .row3{
+            grid-row: span 3;
+        }
+        .area3x2 {
+            grid-area: span 3/span 2;
+        }
+        .area3x3 {
+            grid-area: span 3/span 3;
+        } 
+    </style>
+        
+</head>
+<body>
+    <div class="painting">
+        <div class="col3"></div>
+        <div class="row2"></div>
+        <div class="area3x3"></div>
+        <div class="col2 yellow"></div>
+        <div class="row2 yellow"></div>
+        <div class="yellow"></div>
+        <div class="row2"></div>
+        <div></div>
+        <div class="row3"></div>
+        <div class="area3x2"></div>
+        <div class="col3"></div>
+        <div class="row2"></div>
+        <div class="col2"></div>
+        <div></div>
+        <div class="area2x2 yellow"></div>
+        <div class="row2"></div>
+        <div class="col2 red"></div>
+        <div class="col2"></div>
+        
+        
+
+    </div>
+</body>
+</html>
